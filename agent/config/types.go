@@ -318,4 +318,8 @@ type Config struct {
 
 	// VolumePluginCapabilities specifies the capabilities of the ecs volume plugin.
 	VolumePluginCapabilities []string
+
+	// EnableIntrospectionOpenAccess, if true, agent will allow introspection API to be accessible off-host by not binding it
+	// to local host.
+	EnableIntrospectionOpenAccess BooleanDefaultFalse
 }

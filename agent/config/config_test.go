@@ -623,6 +623,14 @@ func TestAWSLogsExecutionRole(t *testing.T) {
 	assert.True(t, conf.OverrideAWSLogsExecutionRole.Enabled())
 }
 
+func TestEnableIntrospectionOpenAccess(t *testing.T) {
+	os.Setenv("ECS_ENABLE_INTROSPECTION_OPEN_ACCESS", "true")
+	conf, err := environmentConfig()
+	assert.NoError(t, err)
+	assert.True(t, conf.EnableIntrospectionOpenAccess.Enabled())
+	os.Setenv("ECS_ENABLE_INTROSPECTION_OPEN_ACCESS", "false")
+}
+
 func TestTaskMetadataRPSLimits(t *testing.T) {
 	testCases := []struct {
 		name                    string

@@ -570,6 +570,7 @@ func environmentConfig() (Config, error) {
 		SpotInstanceDrainingEnabled:         parseBooleanDefaultFalseConfig("ECS_ENABLE_SPOT_INSTANCE_DRAINING"),
 		GMSACapable:                         parseGMSACapability(),
 		VolumePluginCapabilities:            parseVolumePluginCapabilities(),
+		EnableIntrospectionOpenAccess:       parseBooleanDefaultFalseConfig("ECS_ENABLE_INTROSPECTION_OPEN_ACCESS"),
 	}, err
 }
 
